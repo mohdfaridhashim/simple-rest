@@ -19,6 +19,33 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_fullname` varchar(25) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `user_password` varchar(50) NOT NULL,
+  `user_status` tinyint(1) NOT NULL DEFAULT '0',
+  `user_type` int(1) DEFAULT '1',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+INSERT INTO `users` (`user_id`, `user_fullname`, `user_email`, `user_password`, `user_status`, `user_type`)
+VALUES
+	(1,'test','test@gmail.com','1234',1,1),
+	(2,'test2','test2@gmail.com','1234',1,1),
+	(3,'test3','test3@gmail.com','1234',1,1),
+	(4,'Group_service','g1@group.com','123456',1,2);
+
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 # Dump of table conversation
 # ------------------------------------------------------------
@@ -191,33 +218,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table users
-# ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_fullname` varchar(25) NOT NULL,
-  `user_email` varchar(50) NOT NULL,
-  `user_password` varchar(50) NOT NULL,
-  `user_status` tinyint(1) NOT NULL DEFAULT '0',
-  `user_type` int(1) DEFAULT '1',
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-
-INSERT INTO `users` (`user_id`, `user_fullname`, `user_email`, `user_password`, `user_status`, `user_type`)
-VALUES
-	(1,'test','test@gmail.com','1234',1,1),
-	(2,'test2','test2@gmail.com','1234',1,1),
-	(3,'test3','test3@gmail.com','1234',1,1),
-	(4,'Group_service','g1@group.com','123456',1,2);
-
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 
